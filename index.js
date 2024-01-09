@@ -28,7 +28,7 @@ app.use(cors());
 app.use('/users', usersRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello from homepage');
+    res.send('Meeve backend Homepage');
 })
 
 // Les meets
