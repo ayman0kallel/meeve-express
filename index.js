@@ -25,6 +25,14 @@ createDB();
 app.use(bodyParser.json());
 app.use(cors());
 
+// Enable CORS for all routes
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://ayman0kallel.github.io/Meeve-deploy'); // Replace with your GitHub Pages URL
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  next();
+});
+
 app.use('/users', usersRoutes);
 
 app.get('/', (req, res) => {
